@@ -63,10 +63,6 @@ function BookingForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2"
-          required
-        />
-      </div>
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
