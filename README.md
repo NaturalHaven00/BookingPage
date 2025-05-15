@@ -68,4 +68,92 @@ function BookingForm() {
         />
       </div>
 
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="date" className="block text-gray-700 font-medium mb-2">
+          Appointment Date
+        </label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="time" className="block text-gray-700 font-medium mb-2">
+          Appointment Time
+        </label>
+        <input
+          type="time"
+          id="time"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="idFile" className="block text-gray-700 font-medium mb-2">
+          Upload ID for Verification
+        </label>
+        <input
+          type="file"
+          id="idFile"
+          name="idFile"
+          onChange={handleFileChange}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+
+      {message && (
+        <div
+          className={`mb-4 p-2 text-white rounded ${
+            message.includes('successfully') ? 'bg-green-500' : 'bg-red-500'
+          }`}
+        >
+          {message}
+        </div>
+      )}
+
+      <button
+        type="submit"
+        className={`w-full py-2 px-4 text-white rounded ${
+          isSubmitting ? 'bg-gray-400' : 'bg-blue-500 hover:bg-blue-600'
+        }`}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Book Appointment'}
+      </button>
+    </form>
+  );
+}
+
+export default BookingForm;
+          className="w-full border border-gray-300 rounded px-3 py-2"
+          required
+        />
+      </div>
+
 
